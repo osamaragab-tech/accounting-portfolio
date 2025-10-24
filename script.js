@@ -1,7 +1,6 @@
-// Reveal elements on scroll + Navbar active link
+// Reveal elements on scroll
 document.addEventListener("DOMContentLoaded", () => {
     const elements = document.querySelectorAll(".fade-in");
-    const navLinks = document.querySelectorAll(".navbar a");
 
     const revealOnScroll = () => {
         elements.forEach(el => {
@@ -12,26 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    const setActiveLink = () => {
-        let fromTop = window.scrollY + 150;
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Run once on load
 
-        navLinks.forEach(link => {
-            const section = document.querySelector(link.getAttribute("href"));
-            if (
-                section.offsetTop <= fromTop &&
-                section.offsetTop + section.offsetHeight > fromTop
-            ) {
-                navLinks.forEach(l => l.classList.remove("active"));
-                link.classList.add("active");
-            }
-        });
+    // Active navbar link on scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar a");
+
+    const activateLink = () => {
+        let index = sections.length;
+
+        while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+        navLinks.forEach(link => link.classList.remove("active"));
+        navLinks[index].classList.add("active");
     };
 
-    window.addEventListener("scroll", () => {
-        revealOnScroll();
-        setActiveLink();
-    });
-
-    revealOnScroll(); // Run once on load
-    setActiveLink();  // Run once on load
+    window.addEventListener("scroll", activateLink);
 });

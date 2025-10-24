@@ -1,21 +1,11 @@
-:root {
-    --gold: #d4af37;
-    --dark-gold: #a27c1a;
-    --light-bg: #f2f0eb;
-    --dark-text: #2e2e2e;
-    --light-text: #555;
-}
-
 /* General */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: var(--light-bg);
-    color: var(--dark-text);
+    background-color: #f7f7f7;
+    color: #333;
     scroll-behavior: smooth;
 }
-
-/* Navbar */
 
 /* Navbar */
 .navbar {
@@ -24,76 +14,72 @@ body {
     width: 100%;
     background-color: #333;
     z-index: 1000;
-    padding: 15px 0; /* زودنا المسافة الرأسية */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .navbar ul {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 40px; /* مسافة بين العناصر */
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.navbar li {
-    margin: 0;
+    gap: 50px;
 }
 
 .navbar a {
     color: #f7f7f7;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    transition: color 0.3s, transform 0.2s;
+    transition: color 0.3s;
 }
 
-.navbar a:hover {
-    color: #bfa14a;
-    transform: scale(1.05);
-}
-
+.navbar a:hover,
 .navbar a.active {
     color: #bfa14a;
     border-bottom: 2px solid #bfa14a;
     padding-bottom: 3px;
 }
 
-
 /* Header */
 header {
     text-align: center;
     padding: 120px 20px 80px;
-    background: linear-gradient(135deg, #fffbe8, #f9e7a1, #e6c65b);
+    background: linear-gradient(135deg, #fff8e1, #f7e4a0, #e0c36f);
     background-size: 200% 200%;
     animation: gradientShift 10s ease infinite;
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 20px rgba(191,161,74,0.3);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 header h1 {
     font-size: 2.8rem;
-    color: var(--dark-text);
+    color: #2e2e2e;
     text-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 header p {
-    color: var(--light-text);
+    color: #5a5a5a;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
 .social-links a {
     margin: 0 10px;
-    color: var(--dark-gold);
+    color: #8f7b32;
     font-size: 1.4rem;
     transition: color 0.3s, transform 0.2s;
 }
 
 .social-links a:hover {
-    color: var(--gold);
+    color: #bfa14a;
     transform: scale(1.2);
 }
 
@@ -105,11 +91,10 @@ header p {
     justify-content: center;
     gap: 30px;
     background-color: #fff;
-    text-align: center;
 }
 
 .projects h2 {
-    flex-basis: 100%;  /* يخلي العنوان يبقى في سطر كامل */
+    flex-basis: 100%;
     margin-bottom: 40px;
     text-align: center;
     color: #bfa14a;
@@ -123,31 +108,62 @@ header p {
     text-align: center;
     padding: 25px;
     transition: transform 0.3s;
-    border-top: 5px solid var(--gold);
+    border-top: 5px solid #bfa14a;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
 }
 
-/* Skills */
+/* Skills Section */
 .skills {
-    background-color: var(--light-bg);
+    background-color: #f7f7f7;
     text-align: center;
     padding: 80px 20px;
 }
 
 .skills h2 {
-    color: var(--gold);
+    color: #bfa14a;
     margin-bottom: 40px;
 }
 
-.skill-level {
-    height: 100%;
-    background-color: var(--gold);
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
 }
 
-/* Contact */
+.skill-card {
+    background-color: #fff8e1;
+    border-radius: 15px;
+    padding: 25px 20px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(191,161,74,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(191,161,74,0.5);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: #bfa14a;
+    margin-bottom: 10px;
+}
+
+.skill-card span {
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Contact Section */
 .contact {
     text-align: center;
     padding: 80px 20px;
@@ -155,34 +171,103 @@ header p {
 }
 
 .contact h2 {
-    color: var(--gold);
+    color: #bfa14a;
+    margin-bottom: 10px;
 }
 
-.contact button {
-    background-color: var(--gold);
+.contact p {
+    color: #555;
+    margin-bottom: 30px;
 }
 
-.contact button:hover {
-    background-color: var(--dark-gold);
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff8e1;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(191,161,74,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(191,161,74,0.5);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #bfa14a;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #8f7b32;
+    box-shadow: 0 0 8px rgba(191,161,74,0.5);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 14px 0;
+    background: linear-gradient(45deg, #bfa14a, #8f7b32);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(45deg, #8f7b32, #bfa14a);
     transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(191,161,74,0.5);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 25px;
-    background-color: #1f1f1f;
+    background-color: #333;
     color: #f7f7f7;
     margin-top: 40px;
 }
-/* Smooth fade-in effect */
+
+/* Reveal Animations */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .skill-card {
+        width: 250px;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
