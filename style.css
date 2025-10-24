@@ -469,38 +469,53 @@
   z-index: 1;
   text-align: center;
   color: #fff;
-  padding: 0 20px;
   font-family: "Poppins", sans-serif;
+  padding: 0 20px;
+  max-width: 800px;
 }
 
+/* العنوان */
 .hero-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #ffd700, #fff8b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 1.2s ease forwards;
 }
 
+/* الفقرة */
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #f5f5f5;
   opacity: 0.9;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  animation: fadeInUp 1.5s ease forwards;
 }
 
-/* الزر الذهبى */
+/* الزر */
 .gold-btn {
   display: inline-block;
-  padding: 12px 30px;
+  padding: 12px 36px;
   background: linear-gradient(45deg, #d4af37, #ffd700);
-  color: #111;
+  color: #ffffff;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 30px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  border-radius: 40px;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.45);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  animation: fadeInUp 1.8s ease forwards;
 }
 
-/* تأثير اللمعة عند hover */
+/* تأثير اللمعة على الزر */
 .gold-btn::after {
   content: "";
   position: absolute;
@@ -508,7 +523,7 @@
   left: -75%;
   width: 50%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 215, 0, 0.3);
   transform: skewX(-25deg);
   transition: 0.7s;
 }
@@ -518,6 +533,29 @@
 }
 
 .gold-btn:hover {
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
   transform: translateY(-3px);
+}
+
+/* انيميشنات دخول النصوص */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
