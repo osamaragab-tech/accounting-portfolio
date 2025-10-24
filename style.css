@@ -83,7 +83,7 @@ header p {
     transform: scale(1.2);
 }
 
-/* Projects Section */
+/* Projects */
 .projects {
     padding: 80px 20px;
     display: flex;
@@ -115,7 +115,7 @@ header p {
     transform: translateY(-8px);
 }
 
-/* Skills Section */
+/* Skills */
 .skills {
     background-color: #f7f7f7;
     text-align: center;
@@ -163,7 +163,7 @@ header p {
     color: #333;
 }
 
-/* Contact Section */
+/* Contact */
 .contact {
     text-align: center;
     padding: 80px 20px;
@@ -180,43 +180,29 @@ header p {
     margin-bottom: 30px;
 }
 
-.contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-    background-color: #fff8e1;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(191,161,74,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.contact-form:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(191,161,74,0.5);
-}
-
-.contact-form .form-group {
+.contact .form-group {
     margin-bottom: 20px;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact input,
+.contact textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #bfa14a;
+    max-width: 500px;
+    padding: 14px 15px;
+    border: 1px solid #ccc;
     border-radius: 12px;
     font-size: 1rem;
     outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border 0.3s, box-shadow 0.3s;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #8f7b32;
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #bfa14a;
     box-shadow: 0 0 8px rgba(191,161,74,0.5);
 }
 
-.contact-form button {
+.contact button {
     width: 100%;
     padding: 14px 0;
     background: linear-gradient(45deg, #bfa14a, #8f7b32);
@@ -229,10 +215,27 @@ header p {
     transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
-.contact-form button:hover {
+.contact button:hover {
     background: linear-gradient(45deg, #8f7b32, #bfa14a);
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(191,161,74,0.5);
+}
+
+.form-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    font-weight: 600;
+    color: #fff;
+    background-color: #bfa14a;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Footer */
@@ -258,16 +261,8 @@ footer {
 
 /* Responsive */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .skill-card {
-        width: 250px;
-    }
-
-    .skills-container {
-        flex-direction: column;
-        align-items: center;
-    }
+    header h1 { font-size: 2rem; }
+    .skills-container { flex-direction: column; align-items: center; }
+    .skill-card { width: 250px; }
+    .project-card { width: 250px; }
 }
