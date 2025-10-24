@@ -103,68 +103,7 @@
             background-color: rgba(255,255,255,0.1);
         }
 
-        /* Header 
-        header {
-            position: relative;
-            height: 90vh;
-            
-                
-            background: 
-    linear-gradient(rgba(0, 102, 255, 0.5), rgba(0, 102, 255, 0.5)),
-    url('header-bg.jpg') center/cover no-repeat;
-          
-            background-position: center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(191, 161, 74, 0.3);
-        }
 
-        .header-content {
-            max-width: 800px;
-            padding: 0 20px;
-        }
-
-        header h1 {
-            color: var(--text-color);
-            text-shadow: 1px 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 30px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: var(--white);
-            border-radius: 50%;
-            color: var(--primary-dark);
-            font-size: 1.3rem;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-        }
-
-        .social-links a:hover {
-            color: var(--white);
-            background-color: var(--primary-color);
-            transform: translateY(-5px);
-        }
-*/
         /* Projects */
         .projects {
             background-color: var(--white);
@@ -397,9 +336,7 @@
                 max-width: 100%;
             }
             
-            header {
-                height: 80vh;
-            }
+           
             
             section {
                 padding: 60px 20px;
@@ -484,6 +421,7 @@
   margin-bottom: 15px;
   background: linear-gradient(45deg, #ffd700, #fff8b0);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fadeInDown 1.2s ease forwards;
 }
