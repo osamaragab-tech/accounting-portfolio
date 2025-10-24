@@ -417,12 +417,12 @@
   font-weight: 700;
   letter-spacing: 1.2px;
   color: #fff;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  /* text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
   margin-bottom: 15px;
   /* background: linear-gradient(45deg, #ffd700, #fff8b0); */
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-background-clip: text;
+  background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
   animation: fadeInDown 1.2s ease forwards;
 }
 
