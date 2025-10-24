@@ -1,66 +1,41 @@
-// Reveal elements on scroll
+// Reveal on scroll
 document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".fade-in");
+  const elements = document.querySelectorAll(".fade-in");
 
-    const revealOnScroll = () => {
-        elements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) el.classList.add("visible");
-        });
-    };
-
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-
-    // Navbar active link
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar a");
-    const activateLink = () => {
-        let index = sections.length;
-        while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
-        navLinks.forEach(link => link.classList.remove("active"));
-        navLinks[index].classList.add("active");
-    };
-    window.addEventListener("scroll", activateLink);
-
-    // Form submit with toast message
-    const form = document.getElementById("contactForm");
-    const formMessage = document.getElementById("formMessage");
-    form.addEventListener("submit", function(e){
-        e.preventDefault();
-        fetch(form.action, { method: form.method, body: new FormData(form), headers: { 'Accept':'application/json' } })
-        .then(response => {
-            if(response.ok){
-                formMessage.textContent = "Message sent successfully!";
-                formMessage.style.display = "block";
-                form.reset();
-                setTimeout(()=> formMessage.style.display="none",4000);
-            } else {
-                formMessage.textContent = "Oops! Something went wrong.";
-                formMessage.style.backgroundColor="#e74c3c";
-                formMessage.style.display="block";
-                setTimeout(()=> formMessage.style.display="none",4000);
-            }
-        });
+  const revealOnScroll = () => {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("visible");
+      }
     });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
 });
 
+// Form handler
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const formMessage = document.getElementById("formMessage");
 
-const form = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-
-form.addEventListener('submit', function(e){
-    e.preventDefault();
-    
-    // Simple fake success message
-    formMessage.textContent = "Your message has been sent successfully!";
-    formMessage.style.color = "green";
-
-    // Clear form fields
-    form.reset();
-
-    // Fade-out message after 3 seconds
-    setTimeout(() => {
-        formMessage.textContent = "";
-    }, 3000);
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      formMessage.textContent = "Message sent successfully!";
+      formMessage.style.display = "block";
+      form.reset();
+      setTimeout(() => formMessage.style.display = "none", 4000);
+    } else {
+      formMessage.textContent = "Oops! Something went wrong.";
+      formMessage.style.backgroundColor = "#e74c3c";
+      formMessage.style.display = "block";
+      setTimeout(() => formMessage.style.display = "none", 4000);
+    }
+  });
 });
