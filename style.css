@@ -110,7 +110,9 @@
             background: 
                 linear-gradient(rgba(255, 248, 225, 0.4), rgba(240, 220, 160, 0.45)),
                 linear-gradient(135deg, #fff8e1 0%, #f5e8c8 100%);
-            background-image: url('header-bg.jpg');    
+            background-image: url('header-bg.jpg'); 
+            background-position: center;
+            background-size: cover;
             display: flex;
             align-items: center;
             justify-content: center;
