@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/a2e0e6ad46.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -21,30 +22,36 @@
     </nav>
 
     <!-- Header -->
-    <header id="home" class="fade-in">
-        <h1>Freelance Accountant</h1>
-        <p>QuickBooks & Excel Specialist</p>
-        <div class="social-links">
-            <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+    <header id="home" class="header fade-in">
+        <div class="overlay">
+            <div class="header-content">
+                <h1>Freelance Accountant</h1>
+                <p>QuickBooks & Excel Specialist</p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- Projects Section -->
     <section class="projects fade-in" id="projects">
         <h2>Recent Projects</h2>
-        <div class="project-card">
-            <h3>Client Management System</h3>
-            <p>A Django-based system to manage client data, invoices, and financial reports efficiently.</p>
-        </div>
-        <div class="project-card">
-            <h3>Task Tracker</h3>
-            <p>Organize your daily accounting and bookkeeping tasks with automated reminders.</p>
-        </div>
-        <div class="project-card">
-            <h3>Excel Automation Tool</h3>
-            <p>Automated balance sheet generator using Excel macros for quick reporting.</p>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Client Management System</h3>
+                <p>A Django-based system to manage client data, invoices, and financial reports efficiently.</p>
+            </div>
+            <div class="project-card">
+                <h3>Task Tracker</h3>
+                <p>Organize your daily accounting and bookkeeping tasks with automated reminders.</p>
+            </div>
+            <div class="project-card">
+                <h3>Excel Automation Tool</h3>
+                <p>Automated balance sheet generator using Excel macros for quick reporting.</p>
+            </div>
         </div>
     </section>
 
@@ -86,8 +93,8 @@
                 <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit">Send Message</button>
+            <div id="formMessage" class="form-message"></div>
         </form>
-        <div id="formMessage" class="form-message"></div>
     </section>
 
     <!-- Footer -->
@@ -95,11 +102,7 @@
         <p>&copy; 2025 Freelance Accountant. All rights reserved.</p>
     </footer>
 
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/a2e0e6ad46.js" crossorigin="anonymous"></script>
-
     <!-- JS -->
     <script src="script.js"></script>
-
 </body>
 </html>

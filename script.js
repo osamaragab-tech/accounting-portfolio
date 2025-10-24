@@ -44,3 +44,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
+const form = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    
+    // Simple fake success message
+    formMessage.textContent = "Your message has been sent successfully!";
+    formMessage.style.color = "green";
+
+    // Clear form fields
+    form.reset();
+
+    // Fade-out message after 3 seconds
+    setTimeout(() => {
+        formMessage.textContent = "";
+    }, 3000);
+});
