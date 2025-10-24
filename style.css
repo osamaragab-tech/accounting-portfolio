@@ -1,9 +1,17 @@
+:root {
+    --gold: #d4af37;
+    --dark-gold: #a27c1a;
+    --light-bg: #f2f0eb;
+    --dark-text: #2e2e2e;
+    --light-text: #555;
+}
+
 /* General */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: #f7f7f7;
-    color: #333;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
     scroll-behavior: smooth;
 }
 
@@ -12,7 +20,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #1f1f1f;
     z-index: 1000;
     padding: 10px 0;
 }
@@ -25,10 +33,6 @@ body {
     padding: 0;
 }
 
-.navbar li {
-    margin: 0 15px;
-}
-
 .navbar a {
     color: #f7f7f7;
     text-decoration: none;
@@ -37,48 +41,40 @@ body {
 }
 
 .navbar a:hover {
-    color: #bfa14a;
+    color: var(--gold);
 }
 
 /* Header */
 header {
     text-align: center;
     padding: 120px 20px 80px;
-    background: linear-gradient(135deg, #fff8e1, #f7e4a0, #e0c36f);
+    background: linear-gradient(135deg, #fffbe8, #f9e7a1, #e6c65b);
     background-size: 200% 200%;
     animation: gradientShift 10s ease infinite;
-    box-shadow: 0 4px 20px rgba(191, 161, 74, 0.3);
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
 }
 
 header h1 {
     font-size: 2.8rem;
-    color: #2e2e2e;
+    color: var(--dark-text);
     text-shadow: 1px 2px 4px rgba(0,0,0,0.2);
-    margin-bottom: 10px;
-    letter-spacing: 1px;
 }
 
 header p {
-    color: #5a5a5a;
+    color: var(--light-text);
     font-size: 1.2rem;
     font-weight: 500;
 }
 
 .social-links a {
     margin: 0 10px;
-    color: #8f7b32;
+    color: var(--dark-gold);
     font-size: 1.4rem;
     transition: color 0.3s, transform 0.2s;
 }
 
 .social-links a:hover {
-    color: #bfa14a;
+    color: var(--gold);
     transform: scale(1.2);
 }
 
@@ -100,60 +96,31 @@ header p {
     text-align: center;
     padding: 25px;
     transition: transform 0.3s;
-    border-top: 5px solid #bfa14a;
+    border-top: 5px solid var(--gold);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
 }
 
-.project-card h3 {
-    color: #333;
-}
-
-.project-card p {
-    color: #555;
-    font-size: 0.95rem;
-}
-
-/* Skills Section */
+/* Skills */
 .skills {
-    background-color: #f7f7f7;
+    background-color: var(--light-bg);
     text-align: center;
     padding: 80px 20px;
 }
 
 .skills h2 {
-    color: #bfa14a;
+    color: var(--gold);
     margin-bottom: 40px;
-}
-
-.skill {
-    margin-bottom: 25px;
-}
-
-.skill span {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-    font-weight: 600;
-}
-
-.skill-bar {
-    width: 200px;
-    height: 10px;
-    background-color: #ddd;
-    border-radius: 10px;
-    margin: 0 auto;
-    overflow: hidden;
 }
 
 .skill-level {
     height: 100%;
-    background-color: #bfa14a;
+    background-color: var(--gold);
 }
 
-/* Contact Section */
+/* Contact */
 .contact {
     text-align: center;
     padding: 80px 20px;
@@ -161,49 +128,15 @@ header p {
 }
 
 .contact h2 {
-    color: #bfa14a;
-    margin-bottom: 10px;
-}
-
-.contact p {
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.contact .form-group {
-    margin-bottom: 20px;
-}
-
-.contact input,
-.contact textarea {
-    width: 100%;
-    max-width: 500px;
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 1rem;
-    outline: none;
-    transition: border 0.3s;
-}
-
-.contact input:focus,
-.contact textarea:focus {
-    border-color: #bfa14a;
+    color: var(--gold);
 }
 
 .contact button {
-    background-color: #bfa14a;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+    background-color: var(--gold);
 }
 
 .contact button:hover {
-    background-color: #8f7b32;
+    background-color: var(--dark-gold);
     transform: scale(1.05);
 }
 
@@ -211,30 +144,18 @@ header p {
 footer {
     text-align: center;
     padding: 25px;
-    background-color: #333;
+    background-color: #1f1f1f;
     color: #f7f7f7;
     margin-top: 40px;
 }
-
-/* Reveal Animations */
+/* Smooth fade-in effect */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .skill-bar {
-        width: 150px;
-    }
 }
