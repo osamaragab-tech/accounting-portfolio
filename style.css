@@ -16,33 +16,52 @@ body {
 }
 
 /* Navbar */
+
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #1f1f1f;
+    background-color: #333;
     z-index: 1000;
-    padding: 10px 0;
+    padding: 15px 0; /* زودنا المسافة الرأسية */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar ul {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 40px; /* مسافة بين العناصر */
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.navbar li {
+    margin: 0;
 }
 
 .navbar a {
     color: #f7f7f7;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s, transform 0.2s;
 }
 
 .navbar a:hover {
-    color: var(--gold);
+    color: #bfa14a;
+    transform: scale(1.05);
 }
+
+.navbar a.active {
+    color: #bfa14a;
+    border-bottom: 2px solid #bfa14a;
+    padding-bottom: 3px;
+}
+
 
 /* Header */
 header {
