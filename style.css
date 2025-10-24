@@ -109,7 +109,7 @@ header p {
 }
 
 .projects h2 {
-    width: 100%;  /* يخلي العنوان يبقى في سطر كامل */
+    flex-basis: 100%;  /* يخلي العنوان يبقى في سطر كامل */
     margin-bottom: 40px;
     text-align: center;
     color: #bfa14a;
