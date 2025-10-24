@@ -105,6 +105,14 @@ header p {
     justify-content: center;
     gap: 30px;
     background-color: #fff;
+    text-align: center;
+}
+
+.projects h2 {
+    width: 100%;  /* يخلي العنوان يبقى في سطر كامل */
+    margin-bottom: 40px;
+    text-align: center;
+    color: #bfa14a;
 }
 
 .project-card {
